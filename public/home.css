@@ -1,0 +1,162 @@
+html {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    max-width: 100%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: rgba(14, 5, 5, 0.75) url(bank.jpg) center;
+    /* background: url(desktophome1.png) ; */
+    /* background-image: linear-gradient(to bottom right, rgba(61, 67, 52, 0.9), rgba(165, 240, 247, 0.9)); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: darken; 
+    /* https://blockchainstock.blob.core.windows.net/features/0C04374F9D9E786C90CBF600B0806E4B57162AE9364254D6CA71AB25D2DFDAF6.jpg */
+}
+
+#flash{
+    color: red; 
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    /* background-color: #caeffb; */
+    /* margin-left: 20em; */
+
+}
+
+#navimg{
+    height: 30px;
+    width: 40px;
+}
+
+nav{
+    opacity: 1;
+}
+nav:hover{
+    opacity: 1;
+}
+
+
+#main {
+    display: flex;
+    justify-content: end;
+    margin-right: 2em;
+    font-size: large;
+}                                   
+
+#key {
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    margin-right: 1em;
+    width: 60%;
+    height: fit-content;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.4em;
+    box-sizing: border-box;
+    font-weight: bolder;
+    display: inline-block;
+    margin-left: 2cm;
+    color:white;
+    font-weight: bold;
+    margin-top: 1em;
+    border: 2px solid rgb(168, 224, 222);
+    background-color: rgb(20, 29, 40);
+    opacity: 0.8;
+    border-radius: 1em;
+}
+
+#ptop{
+    margin-top: 2em;
+}
+
+#relog {
+    background-color: rgb(255, 255, 255);
+    color: rgb(232, 248, 252);
+    padding: 0.3em;
+    /* font-size: 20px; */
+    font-weight: bold;
+    font-size: 1.6rem;
+    border-radius: 0.5em;
+}
+
+#relog:hover {
+    color: red;
+    padding: 5.5px;
+    /* background-color: rgb(223, 215, 215); */
+    background-color: white;
+    font-weight: bold;
+    border-radius: 0.2em;
+}
+
+
+#upper {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    margin-top: 3em;
+    box-sizing: border-box;
+}
+
+
+#regloglink{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+
+#regloglink:hover{
+    color: red;
+    cursor: grab;
+}
+
+#otpform{
+    width: 50%;
+    height: 10em;
+    background-color: rgb(63, 52, 49);
+    border: 2px salmon solid;
+    border-radius: 1em;
+    position: relative;
+    top: 10em;
+    left: 15em;
+    opacity: 0.9;
+}
+
+.otpdiv{
+    color: white;
+    font-weight: bolder;
+    margin-top: 3em;
+    margin-left: 3em;
+}
+
+#btnotp{
+    color: green;
+    font-weight: bolder;
+}
+
+#btnotp:hover{
+    color: red;
+    background-color: white;
+    border-radius: 0.5em;
+    transition: 0.8s;
+    padding: 0.2em;
+}
+
+#forgotPassword{
+    font-weight: bold;
+    color: yellow;
+}
+
+#forgotPassword:hover{
+    text-decoration: none;
+    color: black;
+}
+

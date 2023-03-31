@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+#formd {
+  color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  border: none;
+}
+
+#indiv {
+  width: 400px;
+  width: 70%;
+  height: 100%;
+  border: 2px rgb(4, 5, 5) solid;
+  /* background: rgba(31, 31, 31, 0.4); */
+  /* background-color: rgba(25, 36, 49,0.6); */
+  background: rgba(241, 240, 240, 0.4);
+  color: black;
+  font-weight: bolder;
+  padding: 1em;
+  border-radius: 1em;
+  margin-top: 2em;
+  
+}
+
+
