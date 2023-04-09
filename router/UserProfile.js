@@ -1,15 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
-const session =  require('express-session');
+const sessionValidation = require('../middlewares/sessionValidation');
+const path = require('path');
 
+router.use(express.static(path.join(__dirname, '../upload')));
 
+router.get('/', sessionValidation, (req, res) => {
 
-router.get('/', (req,res)=>{
-    if (!req.session.user_id) {
-        res.redirect('/login')
-    }
-    else res.render('UserProfile.ejs');
+    let email = req.session.email;
+
+    const imagePath = `${email}.jpg`;
+
+    res.render('UserProfile.ejs', { imagePath });
+
 });
 
-module.exports = router;
+module.exports = router;           

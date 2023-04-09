@@ -160,3 +160,11 @@ nav:hover{
     color: black;
 }
 
+#sect{
+    background-color: aliceblue;
+    margin-top: 1em;
+    border: 5px groove saddlebrown;
+    border-radius: 1em;
+    padding: 1em;
+    opacity: 0.7;
+}

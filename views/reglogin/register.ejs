@@ -1,0 +1,49 @@
+<% layout('/layouts/boilerplate') %>
+
+    <form action="/register" method="post" class="validated-form" novalidate enctype="multipart/form-data">
+        <div id="formd">
+            <div id="indiv">
+
+                <div class="mb-3">
+                    <label class="form-label" for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email" required="true">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Password" required="true">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1">Confirm-Password</label>
+                    <input type="password" class="form-control" name="confirmPassword" id=""
+                        placeholder="Confirm Password" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="dob">Date of birth :- </label>
+                    <input type="date" class="form-control" name="dob" id="dob" placeholder="Enter Date of birth"
+                        min="1950-01-01" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Enter Captcha :-</label>
+                    <h1>
+                        <input type="text" style="background-color: rgb(0, 0, 0); font-weight: bolder;"
+                            class="form-control" placeholder="<%= captcha %>" readonly>
+                    </h1>
+                    <input type="text" class="form-control" name="captcha" placeholder="Enter above Captcha" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="img">Upload Your Image :- </label>
+                    <input type="file" class="form-control" name="img" id="img" accept="Image/*" required>
+                </div>
+
+                <button type="submit" style="font-weight: bold;" class="btn btn-outline-success">Submit</button>
+            </div>
+        </div>
+
+    </form>

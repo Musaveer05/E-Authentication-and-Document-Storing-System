@@ -5,27 +5,32 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const emailOtpMod = require('../models/userEmailOtp');
 
-router.get('/', (req,res) =>{
+router.get('/', (req, res) => {
     res.render('verifyotp');
 })
 
 router.post('/', async (req, res) => {
-    const { user_id, otp } = req.body;
+    const { otp } = req.body;
 
     const strotp = otp.toString();
+    const email = req.session.email;
 
-    const userMail = await emailOtpMod.findOne({ user_id });
-    const Email = userMail.email;
-    const validotp = await bcrypt.compare(strotp, userMail.emailOtp);
-
-    if (validotp) {
-        await User.updateOne({ email: Email }, { $set: { verified: true } });
-        console.log("Yes verified otp");
-        res.redirect('/');
+    if (!email) {
+        res.redirect('/register');
     }
     else {
-        res.redirect('/verifyOtp');
-        console.log("Not verified");
+        const userMail = await emailOtpMod.findOne({ email });
+        const validotp = await bcrypt.compare(strotp, userMail.emailOtp);
+
+        if (validotp) {
+            await User.updateOne({ email: email }, { $set: { verified: true } });
+            delete req.session.email;
+            res.redirect('/');
+        }
+        else {
+            res.redirect('/verifyOtp');
+        }
+
     }
 });
 

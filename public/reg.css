@@ -24,7 +24,8 @@ html {
   border: 2px rgb(4, 5, 5) solid;
   /* background: rgba(31, 31, 31, 0.4); */
   /* background-color: rgba(25, 36, 49,0.6); */
-  background: rgba(241, 240, 240, 0.4);
+  background: rgba(241, 240, 240, 0.8);
+  box-shadow: #b7cae1 4px 9px 15px 1px;
   color: black;
   font-weight: bolder;
   padding: 1em;

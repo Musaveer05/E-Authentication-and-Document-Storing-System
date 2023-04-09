@@ -13,7 +13,11 @@ const userschema = new mongoose.Schema({
         type: String,
         required: true
     },
-    phoneNo: {
+    privateKey:{
+        type: String,
+        required: true
+    },
+    publicKey:{
         type: String,
         required: true
     },
