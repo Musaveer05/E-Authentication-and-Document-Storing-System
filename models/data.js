@@ -5,14 +5,18 @@ const Credentials = new mongoose.Schema({
         type: String,
         required: true,
     },
-    Aadhar: {
-        type: String,
-        required: true
-    },
-    DOB:{
-        type: String,
-        required: true,
-    }
+    images: [
+        {
+            filename:{
+                type:String,
+                required:true
+            },
+            path:{
+                type:String,
+                required:true
+            }
+        }
+    ]
 
 })
 

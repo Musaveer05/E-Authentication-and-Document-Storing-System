@@ -1,17 +1,23 @@
 <% layout('/layouts/boilerplate') %>
     <link rel="stylesheet" href="home.css">
+
+    <div id="flash">
+        <%= messages %>
+    </div>
     
     <div id="upper">
-        <div id="flash"><%= messages %></div>
-        <section id="main">
-            <div id="key">
-                <p>"For new user, click register"</p>
-                <button id="relog"><a href="/register" id="regloglink">Register</a></button>
-                <!-- file:///C:/Users/musaveer/Desktop/Project/SU&SI/registerform.html -->
-                <p id="ptop">"Already registered, click login"</p>
-                <button id="relog"> <a href="/login" id="regloglink">Log In</a></button>
 
+        <p id="welcome">
+            Welcome to our secure and reliable document storage portal, where you can store your valuable documents worry-free
+        </p>
+
+        <div id="key">
+            <div>
+                <p>"For New User, Click Register"</p>
+                <button id="reglog"><a href="/register" id="regloglink">Register</a></button>
+                <p id="idP">"Already Registered ? Click Login"</p>
+                <button id="reglog"><a href="/login" id="regloglink">Login</a></button>
             </div>
-        </section>
+        </div>
 
     </div>

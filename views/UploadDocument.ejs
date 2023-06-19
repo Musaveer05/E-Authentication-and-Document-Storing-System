@@ -1,7 +1,13 @@
 <% layout('/layouts/profile') %>
 
-    <h1>Hey here you will upload your document </h1>
-    <form action="/UserProfile/UploadDocuments" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" />
-        <button type="submit">Upload</button>
-    </form>
+    <link rel="stylesheet" href="/viewDoc.css" type=text/css>
+
+    <div class="uploadDoc">
+
+        <h1>Hey here you will upload your document </h1>
+        <form enctype="multipart/form-data" method="post" action="/UserProfile/UploadDocuments" id="uploadForm">
+            <input type="file" name="image" multiple />
+            <button type="submit">Upload</button>
+        </form>
+
+    </div>

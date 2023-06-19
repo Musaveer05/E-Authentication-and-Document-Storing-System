@@ -1,5 +1,46 @@
 <% layout('/layouts/profile') %>
+<link rel="stylesheet" href="/viewDoc.css" type="text/css">
 
-    <form action="/UserProfile/viewDocuments" method="post">
-        <button>View document</button>
-    </form>
+    <div class="mainContainer">
+      <h1 id="flash"><%= messages  %></h1>
+
+    <div class="container">
+      <table>
+        <tbody>
+          <% if (credentials && credentials.length> 0) { %>
+            <% credentials.forEach(function (image, index) { %>
+              <tr>
+                <td>
+                  <div class="image-container">
+                    <img src="<%= image.path %>" alt="<%= image.filename %>" />
+                  </div>
+                </td>
+                <td id="makeCol">
+                  <div class="button-container">
+                    <form action="/delete-image" method="post">
+                      <input type="hidden" name="imageurl" value="<%= image.filename %>">
+                      <button type="submit">Delete</button>
+                    </form>
+                    <form action="/download-image" method="post">
+                      <input type="hidden" name="imageID" value="<%= image.path %>" >
+                      <button type="submit">Download</button>
+                    </form>
+                  </div>
+
+                </td>
+              </tr>
+              <% }); %>
+                <% } else { %>
+                  <tr>
+                    <td colspan="2">No images found</td>
+                  </tr>
+                  <% } %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  </body>
+
+  </html>

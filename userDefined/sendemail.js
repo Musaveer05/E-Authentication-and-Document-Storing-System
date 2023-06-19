@@ -6,7 +6,7 @@ let mailTransporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'mvmanekia2002@gmail.com',
-        pass: 'quqbumxmpmizmoxb',
+        pass: process.env.EMAILAPI,
     }
 });
 
@@ -26,8 +26,8 @@ async function emailsend(email) {
 
     mailTransporter.sendMail(mailDetails, function (err, data) {
         if (err) {
-            console.log('Error occurs');
-            console.log(err);
+            // console.log('Error occurs');
+            // console.log(err);
             return false;
         } else {
             console.log('Email sent successfully');

@@ -1,5 +1,11 @@
 <% layout('/layouts/profile') %>
 
+  <link rel="stylesheet" href="/Profile.css" type="text/css">
+
+  <div id="flash">
+    <%= messages %>
+  </div>
+
   <div class="mainContainer">
 
     <div class="insideMain">
@@ -18,7 +24,10 @@
       </div>
 
       <div class="afterDescription">
-        <button><a href=""></a></button>
+        <div class="buttonDiv">
+          <button id="Docs"><a href="/UserProfile/viewDocuments">View Documents</a></button><br>
+          <button id="Docs"> <a href="/UserProfile/UploadDocuments">Upload Documents</a></button>
+        </div>
       </div>
 
     </div>

@@ -1,0 +1,108 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  background: radial-gradient(circle, #d4e7f7 100%, #ffffff 100%)
+}
+
+.mainContainer {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2em;
+}
+
+table {
+  margin-top: 20px;
+  width: 70%;
+  background-color: aliceblue;
+  border: 2px rgb(0, 0, 0) solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+th {
+  padding: 0.5em;
+}
+
+td {
+  padding: 0.5em;
+  border: 1px rgb(0, 4, 1) solid;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-container img {
+  width: 200px;
+  padding: 0.4em
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.button-container button {
+  margin-left: 1em;
+}
+
+button {
+  font-weight: bolder;
+  font-size: 1em;
+  padding: 0.5em;
+  background-color: aliceblue;
+  border-radius: 0.4em;
+}
+
+button:hover {
+  background-color: rgb(188, 231, 234);
+  cursor: pointer;
+}
+
+#flash {
+  text-align: center;
+  color: rgb(235, 110, 0);
+}
+
+/* tr{
+  background-color: brown;
+} */
+
+@media (max-width: 500px) {
+
+  tr{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-container{
+    justify-content: center;
+  }
+  
+  .image-container img {
+    width: 90%;
+    padding: 0.4em
+  }
+
+  tr{
+    margin-top: 1em;
+  }
+
+}
+
+
+/* tbody{
+  background-color: blue;
+}
+
+#makeCol{
+  background-color: aqua;
+} */

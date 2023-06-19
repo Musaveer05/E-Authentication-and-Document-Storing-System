@@ -9,25 +9,23 @@ html {
 body {
     max-width: 100%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: rgba(14, 5, 5, 0.75) url(bank.jpg) center;
-    /* background: url(desktophome1.png) ; */
     /* background-image: linear-gradient(to bottom right, rgba(61, 67, 52, 0.9), rgba(165, 240, 247, 0.9)); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: darken; 
-    /* https://blockchainstock.blob.core.windows.net/features/0C04374F9D9E786C90CBF600B0806E4B57162AE9364254D6CA71AB25D2DFDAF6.jpg */
+    /* background-image: linear-gradient(to right, rgb(186 208 239) , rgb(249 254 223)); */
+    background-color: black;
 }
 
 #flash{
     color: red; 
-    font-weight: bold;
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: bolder;
     display: flex;
     justify-content: center;
-    /* background-color: #caeffb; */
-    /* margin-left: 20em; */
-
 }
 
 #navimg{
@@ -37,72 +35,77 @@ body {
 
 nav{
     opacity: 1;
-}
-nav:hover{
-    opacity: 1;
+    /* background-image: linear-gradient(to right, rgb(186 208 239) , rgb(166 138 195)); */
+    background-color: #F3E5F5;
+    /* box-shadow: 0px 25px 45px rgb(223 172 172 / 60%); */
+    color: white;
 }
 
+#particle-js{
+    padding: 0%;
+    margin: 0%;
+    max-width: 100%;
+    height: 80vh;
+}
 
-#main {
+#upper {
+    position: absolute;
+    top: 20%;
     display: flex;
-    justify-content: end;
-    margin-right: 2em;
-    font-size: large;
-}                                   
+    width: 100%;
+    justify-content: space-evenly;
+    /* height: 50vh; */
+    padding: 1em;
+    color: rgb(0, 0, 0);
+}
+
+#welcome{
+    width: 50%;
+    height: 10%;
+    font-size: x-large;
+    font-weight: bolder;
+    /* color: rgb(112 24 207); */
+    color: #e7cae7;
+}
 
 #key {
     font-family: 'Times New Roman', Times, serif;
     box-sizing: border-box;
-    margin-right: 1em;
-    width: 60%;
-    height: fit-content;
-    padding: 20px;
     text-align: center;
-    font-size: 1.4em;
-    box-sizing: border-box;
-    font-weight: bolder;
-    display: inline-block;
-    margin-left: 2cm;
-    color:white;
+    font-size: 1.2em;
     font-weight: bold;
-    margin-top: 1em;
-    border: 2px solid rgb(168, 224, 222);
-    background-color: rgb(20, 29, 40);
-    opacity: 0.8;
-    border-radius: 1em;
+    color: black;
+    padding: 1em;
+    border: 5px rgb(175, 130, 219) groove;
+    border-radius: 0.5em;
+    /* background: rgba(57, 72, 95, 0.4); */
+    background-color: rgba(231, 202, 231, 0.5);
+}
+
+#idP{
+    margin-top: 10px;
 }
 
 #ptop{
     margin-top: 2em;
 }
 
-#relog {
+#reglog {
     background-color: rgb(255, 255, 255);
     color: rgb(232, 248, 252);
-    padding: 0.3em;
-    /* font-size: 20px; */
-    font-weight: bold;
-    font-size: 1.6rem;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    font-size: 1em;
     border-radius: 0.5em;
+    border: 1px rebeccapurple solid;
 }
 
-#relog:hover {
+#reglog:hover {
     color: red;
-    padding: 5.5px;
+    padding: 5px;
     /* background-color: rgb(223, 215, 215); */
     background-color: white;
     font-weight: bold;
     border-radius: 0.2em;
-}
-
-
-#upper {
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-    background-repeat: no-repeat;
-    background-blend-mode: darken;
-    margin-top: 3em;
-    box-sizing: border-box;
 }
 
 
@@ -124,9 +127,9 @@ nav:hover{
     background-color: rgb(63, 52, 49);
     border: 2px salmon solid;
     border-radius: 1em;
-    position: relative;
-    top: 10em;
-    left: 15em;
+    position: absolute;
+    top: 40%;
+    left: 10%;
     opacity: 0.9;
 }
 
@@ -167,4 +170,31 @@ nav:hover{
     border-radius: 1em;
     padding: 1em;
     opacity: 0.7;
+}
+
+
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    #particle-js{
+      position: relative;
+      top: 5%;
+    }
+}
+
+@media (max-width: 620px){
+    #welcome{
+        width: 100%;
+        font-size: large;
+        font-weight: bolder;
+        color: rgb(117, 88, 148);
+        
+    }
+    #upper{
+        display: block;
+        align-items: center;
+        top: 0%;
+    }
+    #flash{
+        font-size: 1em;
+    }
+
 }

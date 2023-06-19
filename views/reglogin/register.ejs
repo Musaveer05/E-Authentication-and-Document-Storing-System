@@ -1,5 +1,9 @@
 <% layout('/layouts/boilerplate') %>
 
+    <div id="flash">
+        <%= messages %>
+    </div>
+
     <form action="/register" method="post" class="validated-form" novalidate enctype="multipart/form-data">
         <div id="formd">
             <div id="indiv">
