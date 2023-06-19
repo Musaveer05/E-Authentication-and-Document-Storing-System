@@ -13,7 +13,7 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 const mongoStore = require('connect-mongo')
-const dbUrl = `mongodb://localhost:27017/semlast`;
+const dbUrl = process.env.DB_URL || `mongodb://localhost:27017/semlast`;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
