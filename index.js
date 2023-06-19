@@ -12,6 +12,10 @@ const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const mongoSanitize = require('express-mongo-sanitize');
+
+const mongoStore = require('connect-mongo');
+
+
 const dbUrl = `mongodb://localhost:27017/semlast`;
 
 mongoose.connect(dbUrl, {
@@ -39,16 +43,26 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(mongoSanitize());
 
 
+const store = mongoStore.create({
+    mongoUrl: dbUrl,
+    touchAfter: 10 * 60 
+})
+
+store.on('error', function(e){
+    console.log('session store error', e);
+})
+
 const sessionConfig = {
+    store,
     name:'session',
-    secret: 'notagoodsecret', 
+    secret: 'notagoodsecretatall', 
     resave: false, 
     saveUninitialized: false, 
     cookie:{
         httpOnly:true,
         // secure:true,
         expires: Date.now() + 300000,
-        maxAge:300000
+        maxAge:10 * 60 * 1000  
     }
 }
 
