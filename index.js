@@ -57,7 +57,7 @@ const sessionConfig = {
     saveUninitialized: false, 
     cookie:{
         httpOnly:true,
-        // secure:true,
+        secure:true,
         expires: Date.now() + 300000,
         maxAge:10 * 60 * 1000  
     }
@@ -68,7 +68,7 @@ app.use(flash());
 
 
 app.use('/register', require('./router/register'));
-app.use('/logain', require('./router/login'));
+app.use('/login', require('./router/login'));
 app.use('/verifyOtp', require('./router/verifyOtp'));
 app.use('/UserProfile', require('./router/UserProfile'));
 app.use('/UserProfile/UploadDocuments', require('./router/uploadDocuments'));
