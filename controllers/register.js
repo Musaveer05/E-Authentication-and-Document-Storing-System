@@ -74,6 +74,7 @@ module.exports.postRegForm = async (req, res) => {
         }
         else{
             await req.flash('error', error.message);
+            console.log("error is flash", req.flash('error');
             res.redirect('/register');
         }
     }
