@@ -41,9 +41,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(mongoSanitize());
 
+const secret = process.env.SECRET;
 
 const store = mongoStore.create({
     mongoUrl: dbUrl,
+    secret,
     touchAfter: 10 * 60 
 })
 
@@ -54,7 +56,7 @@ store.on('error', function(e){
 const sessionConfig = {
     store,
     name:'session',
-    secret: 'notagoodsecretatall', 
+    secret, 
     resave: false, 
     saveUninitialized: false, 
     cookie:{
