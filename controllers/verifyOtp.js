@@ -11,7 +11,7 @@ module.exports.postOtp = async (req, res) => {
     const { otp } = req.body;
 
     const strotp = otp.toString();
-    const email = req.session.email;
+    const email = await req.session.email;
 
     console.log("email is", email);
 
