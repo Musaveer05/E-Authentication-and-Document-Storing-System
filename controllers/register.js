@@ -69,11 +69,11 @@ module.exports.postRegForm = async (req, res) => {
         console.log(error.message)
        
         if(error.message === 'Email Already Exist'){
-            req.flash('Exists', error.message);
+            await req.flash('Exists', error.message);
             return res.redirect('/');
         }
         else{
-            req.flash('error', error.message);
+            await req.flash('error', error.message);
             return res.redirect('/register');
         }
     }
