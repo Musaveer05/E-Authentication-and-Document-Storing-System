@@ -27,6 +27,7 @@
     "joi": "^17.8.3",
     "jquery": "^3.6.4",
     "method-override": "^3.0.0",
+    "mongodb": "^5.6.0",
     "mongoose": "^6.8.2",
     "multer": "^1.4.5-lts.1",
     "multer-storage-cloudinary": "^4.0.0",
