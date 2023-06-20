@@ -18,7 +18,7 @@ const dbUrl = process.env.DB_URL || `mongodb://localhost:27017/semlast`;
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // connectTimeoutMS: 60000 // 1 minute timeout
+    connectTimeoutMS: 60000 // 1 minute timeout
 });
 
 const db = mongoose.connection;
