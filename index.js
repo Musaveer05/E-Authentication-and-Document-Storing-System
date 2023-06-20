@@ -15,6 +15,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const mongoStore = require('connect-mongo')
 const dbUrl = process.env.DB_URL;
 
+mongoose.set('strictQuery', false);
+
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
