@@ -13,6 +13,8 @@ module.exports.postOtp = async (req, res) => {
     const strotp = otp.toString();
     const email = req.session.email;
 
+    console.log("email is", email);
+
     if (!email) {
         return res.redirect('/register');
     }
