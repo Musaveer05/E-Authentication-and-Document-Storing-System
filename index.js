@@ -18,7 +18,7 @@ const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    connectTimeoutMS: 60000 // 1 minute timeout
+    serverSelectionTimeoutMS: 60000, // 1 minute timeout
 });
 
 const db = mongoose.connection;
