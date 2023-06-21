@@ -67,6 +67,7 @@ module.exports.postRegForm = async (req, res) => {
 
         await user.save();
         req.session.email = email;
+        console.log("in reg", req.session.email);
         res.redirect('/verifyOtp');
     }
     catch(error){
