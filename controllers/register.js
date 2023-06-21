@@ -6,7 +6,7 @@ const NodeRsa = require('node-rsa');
 const JoiSchema = require('../userDefined/user_validation');
 
 var str
-module.exports.getRegForm = (req, res) => {
+const getCaptcha = function(){
     let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     let emptyarr = [];
 
@@ -14,8 +14,19 @@ module.exports.getRegForm = (req, res) => {
         emptyarr.push(arr[Math.floor(Math.random() * arr.length)]);
     }
     str = emptyarr.join("");
-    console.log(req.flash('error')); // Log the value of req.flash('error')
+}
 
+
+module.exports.getRegForm = (req, res) => {
+    // let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    // let emptyarr = [];
+
+    // for (let i = 1; i < 7; i++) {
+    //     emptyarr.push(arr[Math.floor(Math.random() * arr.length)]);
+    // }
+    // str = emptyarr.join("");
+    // console.log(req.flash('error')); // Log the value of req.flash('error')
+    getCaptcha();
     res.render('reglogin/register', { captcha: str, messages: req.flash('error') });
 }
 
@@ -75,21 +86,10 @@ module.exports.postRegForm = async (req, res) => {
             res.redirect('/');
         }
         else{
-                await req.flash('error', error.message);
-    const errorMessage = error.message;
-    
-    let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    let emptyarr = [];
 
-    for (let i = 1; i < 7; i++) {
-      emptyarr.push(arr[Math.floor(Math.random() * arr.length)]);
-    }
-    const captcha = emptyarr.join("");
-    
-    console.log(req.flash('error')); // Log the value of req.flash('error')
-    console.log("error is flash", errorMessage);
-    
-    res.render('reglogin/register', { captcha, messages: errorMessage });
+            getCaptcha();
+            const err = error.message;
+            res.render('reglogin/register', { captcha: str, messages: err });
 
         }
     }
