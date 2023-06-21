@@ -4,6 +4,10 @@ const emailOtpMod = require('../models/userEmailOtp');
 
 
 module.exports.getOtpPage = (req, res) => {
+    const email = req.session.email;
+
+    console.log("get otp", email);
+    
     res.render('verifyotp');
 }
 
