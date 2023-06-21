@@ -14,6 +14,8 @@ module.exports.getRegForm = (req, res) => {
         emptyarr.push(arr[Math.floor(Math.random() * arr.length)]);
     }
     str = emptyarr.join("");
+    console.log(req.flash('error')); // Log the value of req.flash('error')
+
     res.render('reglogin/register', { captcha: str, messages: req.flash('error') });
 }
 
