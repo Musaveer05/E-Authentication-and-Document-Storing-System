@@ -80,7 +80,7 @@ module.exports.postRegForm = async (req, res) => {
             // res.redirect('/register');
             await req.flash('error', error.message);
             const errorMessage = error.message;
-            res.render('reglogin/register', { errorMessage });
+            res.render('reglogin/register', { messages: errorMessage });
         }
     }
 }
