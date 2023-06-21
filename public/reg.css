@@ -33,6 +33,16 @@ html {
   
 }
 
+#flash{
+    color: red; 
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+
+
 @media (max-width: 620px){
   
   #indiv{
