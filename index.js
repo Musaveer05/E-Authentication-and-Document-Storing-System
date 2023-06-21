@@ -67,7 +67,7 @@ const sessionConfig = {
     }
 }
 
-console.log("session Config is ,"sessionConfig);
+console.log("session Config is ",sessionConfig);
 
 app.use(session(sessionConfig));
 app.use(flash());
