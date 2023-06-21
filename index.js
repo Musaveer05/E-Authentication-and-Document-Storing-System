@@ -74,8 +74,8 @@ app.use(flash());
 
 
 app.use('/register', require('./router/register'));
-app.use('/login', require('./router/login'));
 app.use('/verifyOtp', require('./router/verifyOtp'));
+app.use('/login', require('./router/login'));
 app.use('/UserProfile', require('./router/UserProfile'));
 app.use('/UserProfile/UploadDocuments', require('./router/uploadDocuments'));
 app.use('/UserProfile/viewDocuments', require('./router/viewDocuments'));
