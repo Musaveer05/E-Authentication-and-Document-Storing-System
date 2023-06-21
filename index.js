@@ -42,6 +42,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(mongoSanitize());
 
 const secret = process.env.SECRET;
+console.log("secret is", secret);
 
 const store = mongoStore.create({
     mongoUrl: dbUrl,
@@ -65,6 +66,8 @@ const sessionConfig = {
         maxAge:10 * 60 * 1000  
     }
 }
+
+console.log("session Config is ,"sessionConfig);
 
 app.use(session(sessionConfig));
 app.use(flash());
