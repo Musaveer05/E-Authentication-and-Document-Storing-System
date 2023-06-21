@@ -18,14 +18,6 @@ const getCaptcha = function(){
 
 
 module.exports.getRegForm = (req, res) => {
-    // let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    // let emptyarr = [];
-
-    // for (let i = 1; i < 7; i++) {
-    //     emptyarr.push(arr[Math.floor(Math.random() * arr.length)]);
-    // }
-    // str = emptyarr.join("");
-    // console.log(req.flash('error')); // Log the value of req.flash('error')
     getCaptcha();
     res.render('reglogin/register', { captcha: str, messages: req.flash('error') });
 }
@@ -62,7 +54,6 @@ module.exports.postRegForm = async (req, res) => {
         
         const fileExtension = path.extname(img.name)
         await img.mv('upload/' + email + fileExtension)
-        req.session.email = email
         await sendEmail(email)
 
         const user = new User({
@@ -75,6 +66,7 @@ module.exports.postRegForm = async (req, res) => {
         })
 
         await user.save();
+        req.session.email = email;
         res.redirect('/verifyOtp');
     }
     catch(error){
