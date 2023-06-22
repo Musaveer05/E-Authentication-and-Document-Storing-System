@@ -2,12 +2,8 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const emailOtpMod = require('../models/userEmailOtp');
 
-
 module.exports.getOtpPage = (req, res) => {
-    const email = req.session.email;
-
-    console.log("get otp", email);
-    
+    if(!req.session.email) return res.redirect('/register');
     res.render('verifyotp');
 }
 
@@ -29,7 +25,7 @@ module.exports.postOtp = async (req, res) => {
         if (validotp) {
             await User.updateOne({ email: email }, { $set: { verified: true } });
             delete req.session.email;
-            req.flash('Exists','OTP Verification Successfully');
+            req.flash('Exists','OTP Verification Successfully done');
             return res.redirect('/');
         }
         else {
