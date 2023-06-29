@@ -10,8 +10,9 @@ module.exports.postUploadForm = async (req, res) => {
 
     try {
         const userId = req.session.user_id;
+        console.log("user_id is ", userId);
         const user = await User.findById(userId);
-
+        console.log("user is ", user);
         if (!user) {
             throw new Error('Threat');
         }
@@ -27,9 +28,9 @@ module.exports.postUploadForm = async (req, res) => {
         })
 
         if (existingData) {
-            // console.log("Yes existing data ", existingData);
+            console.log("Yes existing data ", existingData);
             const result = await Data.updateOne({ _id: userId }, { $push: { images: arr } });
-            // console.log("Update result:", result);
+            console.log("Update result:", result);
         } else {
             const data = new Data({
                 _id: userId,
