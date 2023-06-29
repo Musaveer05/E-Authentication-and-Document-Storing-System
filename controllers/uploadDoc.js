@@ -17,7 +17,10 @@ module.exports.postUploadForm = async (req, res) => {
             throw new Error('Threat');
         }
 
-        const existingData = await Data.findOne({ user: userId });
+        const existingData = await Data.findOne({ _id: userId });
+
+        console.log("existing Data yes ", existingData);
+        
         const key = new NodeRSA(user.publicKey);
 
         const arr = req.files.map((file)=>{
@@ -28,7 +31,6 @@ module.exports.postUploadForm = async (req, res) => {
         })
 
         if (existingData) {
-            console.log("Yes existing data ", existingData);
             const result = await Data.updateOne({ _id: userId }, { $push: { images: arr } });
             console.log("Update result:", result);
         } else {
