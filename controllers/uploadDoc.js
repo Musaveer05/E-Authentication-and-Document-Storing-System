@@ -48,6 +48,7 @@ module.exports.postUploadForm = async (req, res) => {
         }
         
         req.flash('success', 'Error Uploading Images');
+        console.log("Error in uploading images" ,error);
         res.redirect('/UserProfile');
     }
 }
